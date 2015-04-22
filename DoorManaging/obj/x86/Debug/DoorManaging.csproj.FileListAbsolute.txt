@@ -1,0 +1,9 @@
+E:\VS Projects\DoorManaging\DoorManaging\obj\x86\Debug\DoorManaging.csprojResolveAssemblyReference.cache
+E:\VS Projects\DoorManaging\DoorManaging\obj\x86\Debug\DoorManaging.Form1.resources
+E:\VS Projects\DoorManaging\DoorManaging\obj\x86\Debug\DoorManaging.Properties.Resources.resources
+E:\VS Projects\DoorManaging\DoorManaging\obj\x86\Debug\DoorManaging.csproj.GenerateResource.Cache
+E:\VS Projects\DoorManaging\DoorManaging\bin\Debug\DoorManaging.exe
+E:\VS Projects\DoorManaging\DoorManaging\bin\Debug\DoorManaging.pdb
+E:\VS Projects\DoorManaging\DoorManaging\bin\Debug\MySQLDriverCS.dll
+E:\VS Projects\DoorManaging\DoorManaging\obj\x86\Debug\DoorManaging.exe
+E:\VS Projects\DoorManaging\DoorManaging\obj\x86\Debug\DoorManaging.pdb
