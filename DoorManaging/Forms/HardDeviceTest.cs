@@ -8,9 +8,8 @@ using System.Windows.Forms;
 
 namespace DoorManaging.Forms
 {
-    public partial class HardDeviceTest : Form, IHardRecived
+    public partial class HardDeviceTest : Form
     {
-        HardDeviceManaging hm;
         public HardDeviceTest()
         {
             InitializeComponent();
@@ -18,45 +17,31 @@ namespace DoorManaging.Forms
 
         private void button1_Click(object sender, EventArgs e)
         {
-            try
-            {
-                hm.Start();
-            }
-            catch (Exception e1)
-            {
-                ShowErrorMessage(e1.Message);
-            }
+
         }
 
         private void HardDeviceTest_Load(object sender, EventArgs e)
         {
-            try
-            {
-                hm = new HardDeviceManaging(serialPort1,this);
-            }
-            catch (Exception e1)
-            {
-                ShowErrorMessage(e1.Message);
-            }
+
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             try
             {
-                hm.OpenTheDoor();
+                HardDeviceManaging.Open();
             }
-            catch (Exception e1)
-            {
+            catch (Exception e1) {
                 ShowErrorMessage(e1.Message);
             }
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
+
             try
             {
-                hm.LockTheDoor();
+                HardDeviceManaging.Lock();
             }
             catch (Exception e1)
             {
@@ -66,14 +51,7 @@ namespace DoorManaging.Forms
 
         private void button3_Click(object sender, EventArgs e)
         {
-            try
-            {
-                hm.End();
-            }
-            catch (Exception e1)
-            {
-                ShowErrorMessage(e1.Message);
-            }
+
         }
 
 
@@ -81,14 +59,13 @@ namespace DoorManaging.Forms
         {
             MessageBox.Show(content, "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
-        
+
         private void ShowInfoMessage(String content)
         {
             MessageBox.Show(content, "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
-        public void RecievedData(string content)
-        {
-            ShowInfoMessage(content);
-        }
+
+       
+
     }
 }
