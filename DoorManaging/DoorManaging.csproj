@@ -45,6 +45,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Forms\AboutApp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AboutApp.Designer.cs">
+      <DependentUpon>AboutApp.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\AddNew.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -53,11 +59,24 @@
     </Compile>
     <Compile Include="ConnectException.cs" />
     <Compile Include="Database.cs" />
+    <Compile Include="HardDeviceManaging.cs" />
+    <Compile Include="Forms\HardDeviceTest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\HardDeviceTest.Designer.cs">
+      <DependentUpon>HardDeviceTest.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\MainWithGrid.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\MainWithGrid.Designer.cs">
+      <DependentUpon>MainWithGrid.cs</DependentUpon>
     </Compile>
     <Compile Include="IDatabase.cs" />
     <Compile Include="Forms\Managing.cs">
@@ -66,6 +85,7 @@
     <Compile Include="Forms\Managing.Designer.cs">
       <DependentUpon>Managing.cs</DependentUpon>
     </Compile>
+    <Compile Include="IHardRecived.cs" />
     <Compile Include="MysqlDatabase.cs" />
     <Compile Include="OledbDatabase.cs" />
     <Compile Include="Program.cs" />
@@ -77,11 +97,20 @@
     <Compile Include="Forms\ViewInformation.Designer.cs">
       <DependentUpon>ViewInformation.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Forms\AboutApp.resx">
+      <DependentUpon>AboutApp.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\AddNew.resx">
       <DependentUpon>AddNew.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\HardDeviceTest.resx">
+      <DependentUpon>HardDeviceTest.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\MainWithGrid.resx">
+      <DependentUpon>MainWithGrid.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Managing.resx">
       <DependentUpon>Managing.cs</DependentUpon>

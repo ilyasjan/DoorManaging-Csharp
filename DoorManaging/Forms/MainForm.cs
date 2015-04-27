@@ -22,17 +22,17 @@ namespace DoorManaging
 
         private void button1_Click(object sender, EventArgs e)
         {
-            (new AddNew()).ShowDialog();
+              
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            (new ViewInformation()).ShowDialog();
+           
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            (new Managing()).ShowDialog();
+           
         }
 
 

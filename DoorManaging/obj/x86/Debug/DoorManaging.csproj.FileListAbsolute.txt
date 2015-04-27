@@ -10,3 +10,6 @@ E:\VS Projects\DoorManaging\DoorManaging\obj\x86\Debug\DoorManaging.AddNew.resou
 E:\VS Projects\DoorManaging\DoorManaging\obj\x86\Debug\DoorManaging.Managing.resources
 E:\VS Projects\DoorManaging\DoorManaging\obj\x86\Debug\DoorManaging.ViewInformation.resources
 E:\VS Projects\DoorManaging\DoorManaging\obj\x86\Debug\DoorManaging.MainForm.resources
+E:\VS Projects\DoorManaging\DoorManaging\obj\x86\Debug\DoorManaging.Forms.MainWithGrid.resources
+E:\VS Projects\DoorManaging\DoorManaging\obj\x86\Debug\DoorManaging.Forms.AboutApp.resources
+E:\VS Projects\DoorManaging\DoorManaging\obj\x86\Debug\DoorManaging.Forms.HardDeviceTest.resources
