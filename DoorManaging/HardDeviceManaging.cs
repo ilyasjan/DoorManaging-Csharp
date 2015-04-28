@@ -10,7 +10,8 @@ namespace DoorManaging
         IHardRecived rec;
         public HardDeviceManaging()
         {
-            sPorts = new SerialPort("COM4");
+            Config conf = new Config("port.conf");
+            sPorts = new SerialPort(conf.getValue("portname"));
             sPorts.WriteTimeout = 5000;
             sPorts.BaudRate = 9600;
             sPorts.DiscardNull = false;
@@ -23,7 +24,6 @@ namespace DoorManaging
             sPorts.StopBits = StopBits.One;
             sPorts.WriteBufferSize = 2048;
             //sPorts.DataReceived += new SerialDataReceivedEventHandler(sPorts_DataReceived);
-           
         }
 
 
