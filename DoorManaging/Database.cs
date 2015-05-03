@@ -15,7 +15,8 @@ namespace DoorManaging
         /// </summary>
         /// <returns></returns>
         /// 单例模式
-        public static Database getInstanse() {
+        public static Database getInstanse()
+        {
             if (self == null)
                 self = new Database();
             return self;
@@ -49,10 +50,23 @@ namespace DoorManaging
             return list;
         }
 
-        public int Insert()
+        public int Insert(String sql)
         {
-            String sql="";
             return db.Excute(sql);
+        }
+
+        public int Update(String sql)
+        {
+            return db.Excute(sql);
+        }
+
+        /// <summary>
+        /// 析构函数(当此类被释放时被系统调用)
+        /// 目的是为了释放数据库的连接资源
+        /// </summary>
+          ~Database()
+        {
+            db.Close();
         }
     }
 }

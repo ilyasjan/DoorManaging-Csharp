@@ -67,14 +67,16 @@
             // 添加新用户ToolStripMenuItem
             // 
             this.添加新用户ToolStripMenuItem.Name = "添加新用户ToolStripMenuItem";
-            this.添加新用户ToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
+            this.添加新用户ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.添加新用户ToolStripMenuItem.Text = "添加新用户";
+            this.添加新用户ToolStripMenuItem.Click += new System.EventHandler(this.添加新用户ToolStripMenuItem_Click);
             // 
             // 维护用户信息ToolStripMenuItem
             // 
             this.维护用户信息ToolStripMenuItem.Name = "维护用户信息ToolStripMenuItem";
-            this.维护用户信息ToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
+            this.维护用户信息ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.维护用户信息ToolStripMenuItem.Text = "维护用户信息";
+            this.维护用户信息ToolStripMenuItem.Click += new System.EventHandler(this.维护用户信息ToolStripMenuItem_Click);
             // 
             // 记录信息ToolStripMenuItem
             // 
@@ -89,6 +91,7 @@
             this.查询所有的记录ToolStripMenuItem.Name = "查询所有的记录ToolStripMenuItem";
             this.查询所有的记录ToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
             this.查询所有的记录ToolStripMenuItem.Text = "查询所有的记录";
+            this.查询所有的记录ToolStripMenuItem.Click += new System.EventHandler(this.查询所有的记录ToolStripMenuItem_Click);
             // 
             // 帮助ToolStripMenuItem
             // 

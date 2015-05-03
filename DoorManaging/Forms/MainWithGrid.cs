@@ -20,5 +20,23 @@ namespace DoorManaging.Forms
             var frm = new Forms.AboutApp();
             frm.ShowDialog();
         }
+
+        private void 添加新用户ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var form = new AddNew();
+            form.ShowDialog();
+        }
+
+        private void 维护用户信息ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var form = new Managing();
+            form.ShowDialog();
+        }
+
+        private void 查询所有的记录ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var form = new ViewInformation();
+            form.ShowDialog();
+        }
     }
 }

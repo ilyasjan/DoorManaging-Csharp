@@ -14,7 +14,7 @@ namespace DoorManaging
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Forms.HardDeviceTest());
+            Application.Run(new Forms.MainWithGrid());
         }
     }
 }
