@@ -22,6 +22,9 @@ namespace DoorManaging
 
         private void button1_Click(object sender, EventArgs e)
         {
+            //Database db = new Database();
+            //db.init();
+            
             foreach (Control ct in this.Controls)
             {
                 if (ct is TextBox)

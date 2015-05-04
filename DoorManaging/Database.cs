@@ -8,7 +8,7 @@ namespace DoorManaging
     {
         private static Database self;
         private IDatabase db;
-        private const string connectionString = "Data Source=MySQL;" + "Password=akak;User ID=root;Location=localhost;charset=utf8";
+        // private const string connectionString = "Data Source=MySQL;" + "Password=akak;User ID=root;Location=localhost;charset=utf8";
 
         /// <summary>
         /// 
@@ -28,6 +28,8 @@ namespace DoorManaging
 
         public void init()
         {
+            Config c = new Config();
+            string connectionString = String.Format("Data Source=MySQL; Password={0};User ID=ilyas;Location={1};charset=utf8",c.getValue("mpass"),c.getValue("mhost"));
             db.Connect(connectionString);
         }
 
@@ -64,7 +66,7 @@ namespace DoorManaging
         /// 析构函数(当此类被释放时被系统调用)
         /// 目的是为了释放数据库的连接资源
         /// </summary>
-          ~Database()
+        ~Database()
         {
             db.Close();
         }
