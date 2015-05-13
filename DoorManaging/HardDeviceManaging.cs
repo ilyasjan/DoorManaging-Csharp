@@ -33,6 +33,7 @@ namespace DoorManaging
             char []buff=new char[1];
             sPorts.Read(buff,0,1);
             return buff[0].ToString();
+
         }
         public string GetDatafromSerial(byte[] sr)
         {
