@@ -51,7 +51,7 @@
             this.帮助ToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(719, 25);
+            this.menuStrip1.Size = new System.Drawing.Size(719, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -61,7 +61,7 @@
             this.添加新用户ToolStripMenuItem,
             this.维护用户信息ToolStripMenuItem});
             this.文件ToolStripMenuItem.Name = "文件ToolStripMenuItem";
-            this.文件ToolStripMenuItem.Size = new System.Drawing.Size(68, 21);
+            this.文件ToolStripMenuItem.Size = new System.Drawing.Size(71, 20);
             this.文件ToolStripMenuItem.Text = "用户管理";
             // 
             // 添加新用户ToolStripMenuItem
@@ -83,13 +83,13 @@
             this.记录信息ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.查询所有的记录ToolStripMenuItem});
             this.记录信息ToolStripMenuItem.Name = "记录信息ToolStripMenuItem";
-            this.记录信息ToolStripMenuItem.Size = new System.Drawing.Size(68, 21);
+            this.记录信息ToolStripMenuItem.Size = new System.Drawing.Size(71, 20);
             this.记录信息ToolStripMenuItem.Text = "记录信息";
             // 
             // 查询所有的记录ToolStripMenuItem
             // 
             this.查询所有的记录ToolStripMenuItem.Name = "查询所有的记录ToolStripMenuItem";
-            this.查询所有的记录ToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
+            this.查询所有的记录ToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
             this.查询所有的记录ToolStripMenuItem.Text = "查询所有的记录";
             this.查询所有的记录ToolStripMenuItem.Click += new System.EventHandler(this.查询所有的记录ToolStripMenuItem_Click);
             // 
@@ -98,7 +98,7 @@
             this.帮助ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.关于ToolStripMenuItem});
             this.帮助ToolStripMenuItem.Name = "帮助ToolStripMenuItem";
-            this.帮助ToolStripMenuItem.Size = new System.Drawing.Size(44, 21);
+            this.帮助ToolStripMenuItem.Size = new System.Drawing.Size(45, 20);
             this.帮助ToolStripMenuItem.Text = "帮助";
             // 
             // 关于ToolStripMenuItem
@@ -112,22 +112,22 @@
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 25);
+            this.dataGridView1.Location = new System.Drawing.Point(0, 24);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 23;
-            this.dataGridView1.Size = new System.Drawing.Size(719, 414);
+            this.dataGridView1.Size = new System.Drawing.Size(719, 452);
             this.dataGridView1.TabIndex = 1;
             // 
             // MainWithGrid
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(719, 439);
+            this.ClientSize = new System.Drawing.Size(719, 476);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "MainWithGrid";
-            this.Text = "MainWithGrid";
+            this.Text = "门禁系统后台";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

@@ -8,12 +8,13 @@ namespace DoorManaging
     {
         SerialPort sPorts;
         IHardRecived rec;
+
         public HardDeviceManaging()
         {
             Config conf = new Config("port.conf");
             sPorts = new SerialPort(conf.getValue("portname"));
             sPorts.WriteTimeout = 5000;
-            sPorts.BaudRate = 9600;
+            sPorts.BaudRate = 4800;
             sPorts.DiscardNull = false;
             sPorts.DtrEnable = false;
             sPorts.ParityReplace = 63;
@@ -24,6 +25,30 @@ namespace DoorManaging
             sPorts.StopBits = StopBits.One;
             sPorts.WriteBufferSize = 2048;
             //sPorts.DataReceived += new SerialDataReceivedEventHandler(sPorts_DataReceived);
+        }
+
+
+        public String byteToString(byte[] bs)
+        { 
+            char []buff=new char[1];
+            sPorts.Read(buff,0,1);
+            return buff[0].ToString();
+        }
+        public string GetDatafromSerial(byte[] sr)
+        {
+            string kID = "";
+            if (sr != null)
+            {
+                for (int i = 0; i < sr.Length; i++)
+                {
+                    string H = Convert.ToString(sr[i], 16);
+                    if (H.Length == 1)
+                        H = "0" + H;
+                    kID = kID + H;
+                }
+
+            }
+            return kID.ToUpper();
         }
 
 
@@ -65,19 +90,6 @@ namespace DoorManaging
             //rec.RecievedData(buff);
         }
 
-        public void Start(String portName)
-        {
-            try
-            {
-                sPorts.PortName = portName;
-                sPorts.Open();
-            }
-
-            catch (Exception e)
-            {
-                throw e;
-            }
-        }
 
         public void Start()
         {

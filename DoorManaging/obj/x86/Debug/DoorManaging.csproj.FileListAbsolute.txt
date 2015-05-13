@@ -13,3 +13,18 @@ E:\VS Projects\DoorManaging\DoorManaging\obj\x86\Debug\DoorManaging.MainForm.res
 E:\VS Projects\DoorManaging\DoorManaging\obj\x86\Debug\DoorManaging.Forms.MainWithGrid.resources
 E:\VS Projects\DoorManaging\DoorManaging\obj\x86\Debug\DoorManaging.Forms.AboutApp.resources
 E:\VS Projects\DoorManaging\DoorManaging\obj\x86\Debug\DoorManaging.Forms.HardDeviceTest.resources
+Z:\BYSJ\DoorManaging\DoorManaging\obj\x86\Debug\DoorManaging.exe
+Z:\BYSJ\DoorManaging\DoorManaging\obj\x86\Debug\DoorManaging.pdb
+Z:\BYSJ\DoorManaging\DoorManaging\bin\Debug\DoorManaging.exe
+Z:\BYSJ\DoorManaging\DoorManaging\bin\Debug\DoorManaging.pdb
+Z:\BYSJ\DoorManaging\DoorManaging\bin\Debug\MySQLDriverCS.dll
+Z:\BYSJ\DoorManaging\DoorManaging\obj\x86\Debug\DoorManaging.csprojResolveAssemblyReference.cache
+Z:\BYSJ\DoorManaging\DoorManaging\obj\x86\Debug\DoorManaging.Forms.AboutApp.resources
+Z:\BYSJ\DoorManaging\DoorManaging\obj\x86\Debug\DoorManaging.AddNew.resources
+Z:\BYSJ\DoorManaging\DoorManaging\obj\x86\Debug\DoorManaging.Forms.HardDeviceTest.resources
+Z:\BYSJ\DoorManaging\DoorManaging\obj\x86\Debug\DoorManaging.MainForm.resources
+Z:\BYSJ\DoorManaging\DoorManaging\obj\x86\Debug\DoorManaging.Forms.MainWithGrid.resources
+Z:\BYSJ\DoorManaging\DoorManaging\obj\x86\Debug\DoorManaging.Managing.resources
+Z:\BYSJ\DoorManaging\DoorManaging\obj\x86\Debug\DoorManaging.Properties.Resources.resources
+Z:\BYSJ\DoorManaging\DoorManaging\obj\x86\Debug\DoorManaging.ViewInformation.resources
+Z:\BYSJ\DoorManaging\DoorManaging\obj\x86\Debug\DoorManaging.csproj.GenerateResource.Cache

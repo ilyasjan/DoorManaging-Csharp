@@ -8,7 +8,6 @@ namespace DoorManaging
     {
         private static Database self;
         private IDatabase db;
-        // private const string connectionString = "Data Source=MySQL;" + "Password=akak;User ID=root;Location=localhost;charset=utf8";
 
         /// <summary>
         /// 
