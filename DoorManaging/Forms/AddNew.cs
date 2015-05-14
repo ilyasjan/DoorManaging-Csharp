@@ -8,8 +8,11 @@ using System.Windows.Forms;
 
 namespace DoorManaging
 {
-    public partial class AddNew : Form
+    public partial class AddNew : Form,IHardRecived
     {
+
+        private HardDeviceManaging hm;
+        delegate void HandleInterfaceUpdateDelegate(string text);
         public AddNew()
         {
             InitializeComponent();
@@ -48,6 +51,44 @@ namespace DoorManaging
             {
                 MessageBox.Show(e1.Message, "警告!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void AddNew_Load(object sender, EventArgs e)
+        {
+            try
+            {
+                hm = new HardDeviceManaging();
+                hm.rec = this;
+                hm.Start();
+            }
+            catch (Exception ex){
+                MessageBox.Show(ex.Message, "警告!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        public void RecievedData(string content)
+        {
+            UpdateReceiveTextBox(content);
+        }
+
+        private void UpdateReceiveTextBox(string text)
+        {
+            //不在同一线程
+            if (txtCard.InvokeRequired)
+            {
+                HandleInterfaceUpdateDelegate InterfaceUpdate = new HandleInterfaceUpdateDelegate(UpdateReceiveTextBox);
+                Invoke(InterfaceUpdate, new object[] { text });
+            }
+            //在同一线程
+            else
+            {
+                txtCard.Text = text;
+            }
+        }
+
+        private void AddNew_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            hm.End();
         }
     }
 }

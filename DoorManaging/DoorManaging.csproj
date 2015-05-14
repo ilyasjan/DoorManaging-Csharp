@@ -62,6 +62,7 @@
     </Compile>
     <Compile Include="ConnectException.cs" />
     <Compile Include="Database.cs" />
+    <Compile Include="Forms\HandleInterfaceUpdateDelegate.cs" />
     <Compile Include="HardDeviceManaging.cs" />
     <Compile Include="Forms\HardDeviceTest.cs">
       <SubType>Form</SubType>
