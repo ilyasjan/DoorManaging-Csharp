@@ -18,7 +18,8 @@ namespace DoorManaging
         {
             try
             {
-                //con = new OleDbConnection(conString);
+                con = new OleDbConnection(conString);
+                con.Open();
             }
             catch {
                 throw ConnectException.getInstanse();

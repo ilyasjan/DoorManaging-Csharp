@@ -25,6 +25,7 @@ namespace DoorManaging
             try
             {
                 con = new MySQLConnection(conString);
+                con.Open();
             }
             catch
             {

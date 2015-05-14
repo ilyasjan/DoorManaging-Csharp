@@ -31,11 +31,11 @@ namespace DoorManaging.Entities
 
         public String getSQLString1()
         {
-            return String.Format(("'{0}','{1}','{2}','{3}','{4}'"),this.CARD, this.SNO, this.NAME, this.CLASS, this.ENABLE);
+            return String.Format(("'{0}','{1}','{2}','{3}',{4}"),this.CARD, this.SNO, this.NAME, this.CLASS, this.ENABLE);
         }
         public String getSQLString2()
         {
-            return String.Format(("card='{0}',sno='{1}',name='{2}',classs='{3}',enable='{4}'"), this.CARD,this.SNO, this.NAME, this.CLASS, this.ENABLE);
+            return String.Format(("ucard='{0}',uxh='{1}',uname='{2}',uclass='{3}',uena='{4}'"), this.CARD,this.SNO, this.NAME, this.CLASS, this.ENABLE);
         }
     }
 }

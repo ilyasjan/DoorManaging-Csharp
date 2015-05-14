@@ -22,13 +22,14 @@ namespace DoorManaging
         }
         public Database()
         {
-            db = MysqlDatabase.getInstanse();
+            db = OledbDatabase.getInstanse();
         }
 
         public void init()
         {
-            Config c = new Config();
-            string connectionString = String.Format("Data Source=MySQL; Password={0};User ID=ilyas;Location={1};charset=utf8",c.getValue("mpass"),c.getValue("mhost"));
+            Config c = new Config("port.conf");
+            c.init();
+            string connectionString = String.Format("Provider=Microsoft.Jet.OLEDB.4.0;Data Source={0}",c.getValue("fname"));
             db.Connect(connectionString);
         }
 

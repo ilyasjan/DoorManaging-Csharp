@@ -7,12 +7,16 @@ namespace DoorManaging
     public class HardDeviceManaging
     {
         private SerialPort sPorts;
+        /// <summary>
+        /// 数据接收接口
+        /// </summary>
         public IHardRecived rec { get; set; }
-        private string[] msgList;
-        private int mCount = 0;
+        private string msgContent = "";
+        /// <summary>
+        /// 使用前必须实现IHardRecived,并付给hm.rec属性
+        /// </summary>
         public HardDeviceManaging()
         {
-            msgList = new string[8];
             Config conf = new Config("port.conf");
             sPorts = new SerialPort(conf.getValue("portname"));
             sPorts.WriteTimeout = 5000;
@@ -85,6 +89,7 @@ namespace DoorManaging
             }
         }
 
+        private int counter=0;
         void sPorts_DataReceived(object sender, SerialDataReceivedEventArgs e)
         {
             byte[] buff = new byte[1];
@@ -92,12 +97,16 @@ namespace DoorManaging
             //int bytesRead = sPorts.BytesToRead;
             //String buff = String.Format("First One :{0}\t Size:{1}", firstByte.ToString(), bytesRead);
             sPorts.Read(buff, 0, 1);
-            msgList[mCount++] = Convert.ToString(buff[0], 16);
-            if (mCount == 4)
+            msgContent += Convert.ToString(buff[0], 16);
+            counter++;
+            if (counter == 4)
             {
-                rec.RecievedData(String.Join("", msgList));
-                mCount = 0;
+                rec.RecievedData(msgContent);
+                msgContent = "";
+                counter = 0;
             }
+            
+            Console.WriteLine(msgContent);
         }
 
 

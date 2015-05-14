@@ -5,10 +5,10 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
-
+using MySQLDriverCS;
 namespace DoorManaging
 {
-    public partial class AddNew : Form,IHardRecived
+    public partial class AddNew : Form, IHardRecived
     {
 
         private HardDeviceManaging hm;
@@ -25,9 +25,9 @@ namespace DoorManaging
 
         private void button1_Click(object sender, EventArgs e)
         {
-            //Database db = new Database();
-            //db.init();
-            
+            Database db = new Database();
+            db.init();
+
             foreach (Control ct in this.Controls)
             {
                 if (ct is TextBox)
@@ -49,7 +49,7 @@ namespace DoorManaging
             }
             catch (Exception e1)
             {
-                MessageBox.Show(e1.Message, "警告!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(e1.Message, "111!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -61,7 +61,8 @@ namespace DoorManaging
                 hm.rec = this;
                 hm.Start();
             }
-            catch (Exception ex){
+            catch (Exception ex)
+            {
                 MessageBox.Show(ex.Message, "警告!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }

@@ -28,8 +28,12 @@ namespace DoorManaging
             {
                 try
                 {
-                    String K = KV.Split('=')[0];
-                    String V = KV.Split('=')[1];
+                    String K = KV.Split('=')[0].Trim();
+                    if (K.Contains("#"))
+                    {
+                        continue;
+                    }
+                    String V = KV.Split('=')[1].Trim();
                     KeyValue.Add(K, V);
                 }
                 catch (Exception e)
@@ -39,7 +43,7 @@ namespace DoorManaging
             }
         }
 
-        public String getValue(String Key)
+        public string getValue(string Key)
         {
             return KeyValue[Key];
         }

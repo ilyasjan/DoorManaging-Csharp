@@ -12,7 +12,7 @@ namespace DoorManaging
             {
                 Database db = new Database();
                 db.init();
-                String sql = String.Format("insert into `student`(sno,name,classs,enable) values({0})", st.getSQLString1());
+                String sql = String.Format("insert into `Users`(ucard,uxh,uname,uclass,uena) values({0})", st.getSQLString1());
                 return db.Insert(sql);
             }
             catch (Exception e)
@@ -27,7 +27,7 @@ namespace DoorManaging
             {
                 Database db = new Database();
                 db.init();
-                String sql = String.Format("update `student` {0} where id={1}", stNew.getSQLString2(), stOLd.ID);
+                String sql = String.Format("update `Users` {0} where id={1}", stNew.getSQLString2(), stOLd.ID);
                 return db.Update(sql);
             }
             catch (Exception e)
