@@ -52,6 +52,11 @@ namespace DoorManaging
             return list;
         }
 
+        public DataTable getTable(String sql)
+        {
+            return db.Query(sql);;
+        }
+
         public int Insert(String sql)
         {
             return db.Excute(sql);
