@@ -63,6 +63,12 @@
     <Compile Include="ConnectException.cs" />
     <Compile Include="Database.cs" />
     <Compile Include="Forms\HandleInterfaceUpdateDelegate.cs" />
+    <Compile Include="Forms\UserInfos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\UserInfos.Designer.cs">
+      <DependentUpon>UserInfos.cs</DependentUpon>
+    </Compile>
     <Compile Include="HardDeviceManaging.cs" />
     <Compile Include="Forms\HardDeviceTest.cs">
       <SubType>Form</SubType>
@@ -119,6 +125,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Managing.resx">
       <DependentUpon>Managing.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\UserInfos.resx">
+      <DependentUpon>UserInfos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

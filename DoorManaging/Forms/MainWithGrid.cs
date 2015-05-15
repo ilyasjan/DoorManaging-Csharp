@@ -29,7 +29,7 @@ namespace DoorManaging.Forms
 
         private void 维护用户信息ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var form = new Managing();
+            var form = new UserInfos();
             form.ShowDialog();
         }
 
@@ -37,6 +37,16 @@ namespace DoorManaging.Forms
         {
             var form = new ViewInformation();
             form.ShowDialog();
+        }
+
+        private void 开ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            HardDeviceManaging.Open();
+        }
+
+        private void 关ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            HardDeviceManaging.Lock();
         }
     }
 }

@@ -41,6 +41,7 @@ namespace DoorManaging
             {
                 var st = new Entities.Students();
                 st.CARD = txtCard.Text;
+                st.NAME = txtName.Text;
                 st.CLASS = txtCLASS.Text;
                 st.SNO = txtSNO.Text;
                 st.ENABLE = chkEnable.Checked;
@@ -49,7 +50,7 @@ namespace DoorManaging
             }
             catch (Exception e1)
             {
-                MessageBox.Show(e1.Message, "111!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(e1.Message, "警告!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

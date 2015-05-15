@@ -128,7 +128,7 @@ namespace DoorManaging
             try
             {
 
-                sPorts.Write(new byte[] { 0xff }, 0, 1);
+                sPorts.Write(new byte[] { 0xf0 }, 0, 1);
             }
 
             catch (Exception e)
@@ -141,7 +141,7 @@ namespace DoorManaging
         {
             try
             {
-                sPorts.Write(new byte[] { 0x00 }, 0, 1);
+                sPorts.Write(new byte[] { 0xff }, 0, 1);
             }
 
             catch (Exception e)

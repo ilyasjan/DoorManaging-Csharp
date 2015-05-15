@@ -37,6 +37,9 @@
             this.查询所有的记录ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.帮助ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.关于ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.门ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.开ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.关ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.serialPort1 = new System.IO.Ports.SerialPort(this.components);
             this.menuStrip1.SuspendLayout();
@@ -48,7 +51,8 @@
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.文件ToolStripMenuItem,
             this.记录信息ToolStripMenuItem,
-            this.帮助ToolStripMenuItem});
+            this.帮助ToolStripMenuItem,
+            this.门ToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(719, 24);
@@ -108,6 +112,29 @@
             this.关于ToolStripMenuItem.Text = "关于";
             this.关于ToolStripMenuItem.Click += new System.EventHandler(this.关于ToolStripMenuItem_Click);
             // 
+            // 门ToolStripMenuItem
+            // 
+            this.门ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.开ToolStripMenuItem,
+            this.关ToolStripMenuItem});
+            this.门ToolStripMenuItem.Name = "门ToolStripMenuItem";
+            this.门ToolStripMenuItem.Size = new System.Drawing.Size(32, 20);
+            this.门ToolStripMenuItem.Text = "门";
+            // 
+            // 开ToolStripMenuItem
+            // 
+            this.开ToolStripMenuItem.Name = "开ToolStripMenuItem";
+            this.开ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.开ToolStripMenuItem.Text = "开";
+            this.开ToolStripMenuItem.Click += new System.EventHandler(this.开ToolStripMenuItem_Click);
+            // 
+            // 关ToolStripMenuItem
+            // 
+            this.关ToolStripMenuItem.Name = "关ToolStripMenuItem";
+            this.关ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.关ToolStripMenuItem.Text = "关";
+            this.关ToolStripMenuItem.Click += new System.EventHandler(this.关ToolStripMenuItem_Click);
+            // 
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -127,7 +154,7 @@
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "MainWithGrid";
-            this.Text = "门禁系统后台";
+            this.Text = "门禁系统";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -148,5 +175,8 @@
         private System.Windows.Forms.ToolStripMenuItem 帮助ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 关于ToolStripMenuItem;
         private System.IO.Ports.SerialPort serialPort1;
+        private System.Windows.Forms.ToolStripMenuItem 门ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 开ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 关ToolStripMenuItem;
     }
 }
