@@ -28,14 +28,28 @@ namespace DoorManaging.Entities
             CLASS = classs;
             ENABLE = enable;
         }
+        public Students(System.Data.DataTable dt)
+        {
+            CARD = dt.Rows[0]["ucard"].ToString();
+
+            INDEX = long.Parse(dt.Rows[0]["id"].ToString());
+
+            SNO = dt.Rows[0]["uxh"].ToString();
+
+            NAME = dt.Rows[0]["uname"].ToString();
+
+            CLASS = dt.Rows[0]["uclass"].ToString();
+
+            ENABLE = bool.Parse(dt.Rows[0]["uena"].ToString());
+        }
 
         public String getSQLString1()
         {
-            return String.Format(("'{0}','{1}','{2}','{3}',{4}"),this.CARD, this.SNO, this.NAME, this.CLASS, this.ENABLE);
+            return String.Format(("'{0}','{1}','{2}','{3}',{4}"), this.CARD, this.SNO, this.NAME, this.CLASS, this.ENABLE);
         }
         public String getSQLString2()
         {
-            return String.Format(("ucard='{0}',uxh='{1}',uname='{2}',uclass='{3}',uena='{4}'"), this.CARD,this.SNO, this.NAME, this.CLASS, this.ENABLE);
+            return String.Format(("ucard='{0}',uxh='{1}',uname='{2}',uclass='{3}',uena={4}"), this.CARD, this.SNO, this.NAME, this.CLASS, this.ENABLE);
         }
     }
 }

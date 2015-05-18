@@ -28,7 +28,9 @@ namespace DoorManaging
         private void dataGridView1_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             String id = dataGridView1.SelectedCells[0].Value.ToString();
-
+            var frm = new Managing();
+            frm.Tag = id;
+            frm.ShowDialog();
         }
     }
 }

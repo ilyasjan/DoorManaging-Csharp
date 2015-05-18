@@ -21,6 +21,11 @@ namespace DoorManaging
         {
             this.Close();
         }
+        private void button1_Click_update(object sender, EventArgs e)
+        {
+                
+
+        }
 
         private void button1_Click(object sender, EventArgs e)
         {

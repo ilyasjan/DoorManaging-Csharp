@@ -31,22 +31,22 @@
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.txtCard = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtCLASS = new System.Windows.Forms.TextBox();
+            this.txtSNO = new System.Windows.Forms.TextBox();
+            this.txtName = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.chkEnable = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(61, 163);
+            this.button1.Location = new System.Drawing.Point(61, 177);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.Size = new System.Drawing.Size(75, 25);
             this.button1.TabIndex = 0;
             this.button1.Text = "更新";
             this.button1.UseVisualStyleBackColor = true;
@@ -54,9 +54,9 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(142, 163);
+            this.button2.Location = new System.Drawing.Point(142, 177);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.Size = new System.Drawing.Size(75, 25);
             this.button2.TabIndex = 1;
             this.button2.Text = "取消";
             this.button2.UseVisualStyleBackColor = true;
@@ -65,103 +65,103 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(13, 16);
+            this.label4.Location = new System.Drawing.Point(13, 17);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(29, 12);
+            this.label4.Size = new System.Drawing.Size(31, 13);
             this.label4.TabIndex = 17;
             this.label4.Text = "卡号";
             // 
-            // textBox4
+            // txtCard
             // 
-            this.textBox4.Location = new System.Drawing.Point(73, 13);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(195, 21);
-            this.textBox4.TabIndex = 16;
+            this.txtCard.Location = new System.Drawing.Point(73, 14);
+            this.txtCard.Name = "txtCard";
+            this.txtCard.Size = new System.Drawing.Size(195, 20);
+            this.txtCard.TabIndex = 16;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(14, 108);
+            this.label3.Location = new System.Drawing.Point(14, 117);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(29, 12);
+            this.label3.Size = new System.Drawing.Size(31, 13);
             this.label3.TabIndex = 15;
             this.label3.Text = "班级";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(14, 50);
+            this.label2.Location = new System.Drawing.Point(14, 54);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(29, 12);
+            this.label2.Size = new System.Drawing.Size(31, 13);
             this.label2.TabIndex = 14;
             this.label2.Text = "学号";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(13, 76);
+            this.label1.Location = new System.Drawing.Point(13, 82);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(29, 12);
+            this.label1.Size = new System.Drawing.Size(31, 13);
             this.label1.TabIndex = 13;
             this.label1.Text = "名称";
             // 
-            // textBox3
+            // txtCLASS
             // 
-            this.textBox3.Location = new System.Drawing.Point(73, 105);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(195, 21);
-            this.textBox3.TabIndex = 12;
+            this.txtCLASS.Location = new System.Drawing.Point(73, 114);
+            this.txtCLASS.Name = "txtCLASS";
+            this.txtCLASS.Size = new System.Drawing.Size(195, 20);
+            this.txtCLASS.TabIndex = 12;
             // 
-            // textBox2
+            // txtSNO
             // 
-            this.textBox2.Location = new System.Drawing.Point(73, 46);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(195, 21);
-            this.textBox2.TabIndex = 11;
+            this.txtSNO.Location = new System.Drawing.Point(73, 50);
+            this.txtSNO.Name = "txtSNO";
+            this.txtSNO.Size = new System.Drawing.Size(195, 20);
+            this.txtSNO.TabIndex = 11;
             // 
-            // textBox1
+            // txtName
             // 
-            this.textBox1.Location = new System.Drawing.Point(73, 73);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(195, 21);
-            this.textBox1.TabIndex = 10;
+            this.txtName.Location = new System.Drawing.Point(73, 79);
+            this.txtName.Name = "txtName";
+            this.txtName.Size = new System.Drawing.Size(195, 20);
+            this.txtName.TabIndex = 10;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(13, 132);
+            this.label5.Location = new System.Drawing.Point(13, 143);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(41, 12);
+            this.label5.Size = new System.Drawing.Size(43, 13);
             this.label5.TabIndex = 18;
             this.label5.Text = "有效性";
             // 
-            // checkBox1
+            // chkEnable
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Checked = true;
-            this.checkBox1.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBox1.Location = new System.Drawing.Point(73, 132);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(72, 16);
-            this.checkBox1.TabIndex = 19;
-            this.checkBox1.Text = "是否有效";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.chkEnable.AutoSize = true;
+            this.chkEnable.Checked = true;
+            this.chkEnable.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.chkEnable.Location = new System.Drawing.Point(73, 143);
+            this.chkEnable.Name = "chkEnable";
+            this.chkEnable.Size = new System.Drawing.Size(74, 17);
+            this.chkEnable.TabIndex = 19;
+            this.chkEnable.Text = "是否有效";
+            this.chkEnable.UseVisualStyleBackColor = true;
             // 
             // Managing
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(281, 192);
-            this.Controls.Add(this.checkBox1);
+            this.ClientSize = new System.Drawing.Size(281, 208);
+            this.Controls.Add(this.chkEnable);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.txtCard);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtCLASS);
+            this.Controls.Add(this.txtSNO);
+            this.Controls.Add(this.txtName);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
@@ -169,6 +169,7 @@
             this.Name = "Managing";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "维护信息";
+            this.Load += new System.EventHandler(this.Managing_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -179,14 +180,14 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox txtCard;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtCLASS;
+        private System.Windows.Forms.TextBox txtSNO;
+        private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.CheckBox chkEnable;
     }
 }

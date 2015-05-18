@@ -23,7 +23,7 @@ namespace DoorManaging
         private void button1_Click(object sender, EventArgs e)
         {
             dataGridView1.DataSource = DBO.getEventLogs(txtCard.Text, txtMC.Text, txtXH.Text, txtBJ.Text);
-
+            
         }
     }
 }
