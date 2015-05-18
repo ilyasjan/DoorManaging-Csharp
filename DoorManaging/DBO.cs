@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-
+using DoorManaging.Entities;
 namespace DoorManaging
 {
     public sealed class DBO
@@ -40,22 +40,31 @@ namespace DoorManaging
         {
             Database db = new Database();
             db.init();
-            return db.getTable(String.Format("select * from EventLogs where `学号` like '{0}' and `名称` like '{1}' and `学号` like '{2}' and `班级` like '{3}' ",kh,mc,xh,bj));
+            return db.getTable(String.Format("select * from EventLogs where `卡号` like '{0}' and `名称` like '{1}' and `学号` like '{2}' and `班级` like '{3}' ",kh,mc,xh,bj));
         }
 
         public static System.Data.DataTable getStudents()
         {
-            Database db = new Database();
-            db.init();
-            return db.getTable(String.Format("select * from Users"));
+            return getStudents("", "", "", "");
         }
 
         public static System.Data.DataTable getStudents(string kh, string mc, string xh, string bj)
         {
             Database db = new Database();
             db.init();
-            string sql = String.Format("select * from UserInfo where `学号` like '{0}%' and `名称` like '{1}%' and `学号` like '{2}%' and `班级` like '{3}%' ", kh, mc, xh, bj);
+            string sql = String.Format("select * from UserInfo where `卡号` like '{0}%' and `名称` like '{1}%' and `学号` like '{2}%' and `班级` like '{3}%' ", kh, mc, xh, bj);
             return db.getTable(sql);
+        }
+
+        public Students getStudent(string kh)
+        {
+            Database db = new Database();
+            db.init();
+            string sql = String.Format("select * from UserInfo where `卡号` like '{0}'",kh);
+            System.Data.DataTable dt = db.getTable(sql); 
+            Students st = new Students();
+
+            return st;
         }
     }
 }

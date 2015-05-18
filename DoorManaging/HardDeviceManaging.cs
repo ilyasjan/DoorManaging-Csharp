@@ -89,7 +89,7 @@ namespace DoorManaging
             }
         }
 
-        private int counter=0;
+        private int counter = 0;
         void sPorts_DataReceived(object sender, SerialDataReceivedEventArgs e)
         {
             byte[] buff = new byte[1];
@@ -105,7 +105,7 @@ namespace DoorManaging
                 msgContent = "";
                 counter = 0;
             }
-            
+
             Console.WriteLine(msgContent);
         }
 

@@ -24,5 +24,11 @@ namespace DoorManaging
         {
             dataGridView1.DataSource = DBO.getStudents(txtCard.Text, txtMC.Text, txtXH.Text, txtBJ.Text);
         }
+
+        private void dataGridView1_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            String id = dataGridView1.SelectedCells[0].Value.ToString();
+
+        }
     }
 }
