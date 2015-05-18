@@ -17,7 +17,6 @@ Z:\BYSJ\DoorManaging\DoorManaging\obj\x86\Debug\DoorManaging.exe
 Z:\BYSJ\DoorManaging\DoorManaging\obj\x86\Debug\DoorManaging.pdb
 Z:\BYSJ\DoorManaging\DoorManaging\bin\Debug\DoorManaging.exe
 Z:\BYSJ\DoorManaging\DoorManaging\bin\Debug\DoorManaging.pdb
-Z:\BYSJ\DoorManaging\DoorManaging\bin\Debug\MySQLDriverCS.dll
 Z:\BYSJ\DoorManaging\DoorManaging\obj\x86\Debug\DoorManaging.csprojResolveAssemblyReference.cache
 Z:\BYSJ\DoorManaging\DoorManaging\obj\x86\Debug\DoorManaging.Forms.AboutApp.resources
 Z:\BYSJ\DoorManaging\DoorManaging\obj\x86\Debug\DoorManaging.AddNew.resources
