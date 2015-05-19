@@ -30,17 +30,20 @@ namespace DoorManaging.Entities
         }
         public Students(System.Data.DataTable dt)
         {
-            CARD = dt.Rows[0]["ucard"].ToString();
+            if (dt.Rows.Count > 0)
+            {
+                CARD = dt.Rows[0]["ucard"].ToString();
 
-            INDEX = long.Parse(dt.Rows[0]["id"].ToString());
+                INDEX = long.Parse(dt.Rows[0]["id"].ToString());
 
-            SNO = dt.Rows[0]["uxh"].ToString();
+                SNO = dt.Rows[0]["uxh"].ToString();
 
-            NAME = dt.Rows[0]["uname"].ToString();
+                NAME = dt.Rows[0]["uname"].ToString();
 
-            CLASS = dt.Rows[0]["uclass"].ToString();
+                CLASS = dt.Rows[0]["uclass"].ToString();
 
-            ENABLE = bool.Parse(dt.Rows[0]["uena"].ToString());
+                ENABLE = bool.Parse(dt.Rows[0]["uena"].ToString());
+            }
         }
 
         public String getSQLString1()

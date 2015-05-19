@@ -7,24 +7,22 @@ namespace DoorManaging
     public class HardDeviceManaging
     {
         private static SerialPort sPorts;
-        private static bool isInit = false;
         /// <summary>
         /// 数据接收接口
         /// </summary>
         public static IHardRecived rec { get; set; }
-        private static string msgContent = "";
 
         private static void Init()
         {
             Config conf = new Config("port.conf");
             sPorts = new SerialPort(conf.getValue("portname"));
-            sPorts.WriteTimeout = 5000;
+            sPorts.WriteTimeout = 2000;
             sPorts.BaudRate = 4800;
             sPorts.DiscardNull = false;
             sPorts.DtrEnable = false;
             sPorts.ParityReplace = 63;
             sPorts.ReadBufferSize = 4096;
-            sPorts.ReadTimeout = -1;
+            sPorts.ReadTimeout = 2000;
             sPorts.ReceivedBytesThreshold = 1;
             sPorts.RtsEnable = false;
             sPorts.StopBits = StopBits.One;
@@ -46,53 +44,21 @@ namespace DoorManaging
         }
 
 
-        public static String byteToString(byte[] bs)
-        {
-            char[] buff = new char[1];
-            sPorts.Read(buff, 0, 1);
-            return buff[0].ToString();
-
-        }
-        public static string GetDatafromSerial(byte[] sr)
-        {
-            string kID = "";
-            if (sr != null)
-            {
-                for (int i = 0; i < sr.Length; i++)
-                {
-                    string H = Convert.ToString(sr[i], 16);
-                    if (H.Length == 1)
-                        H = "0" + H;
-                    kID = kID + H;
-                }
-
-            }
-            return kID.ToUpper();
-        }
-
-
-
-       
-
-        private static int counter = 0;
         static void sPorts_DataReceived(object sender, SerialDataReceivedEventArgs e)
         {
-            byte[] buff = new byte[1];
-            sPorts.Read(buff, 0, 1);
-            msgContent += Convert.ToString(buff[0], 16);
-            counter++;
-            if (counter == 4)
+            string text = "";
+            int length = sPorts.BytesToRead;
+            byte[] RevData = new byte[length];
+            sPorts.Read(RevData, 0, length);//读串口接收缓冲区中的数据到RevData中
+            for (int i = 0; i < length; i++)
             {
-                rec.RecievedData(msgContent);
-                msgContent = "";
-                counter = 0;
+                text += Convert.ToString(RevData[i], 16);
             }
+            rec.RecievedData(text);
+            //UpdateReceiveTextBox(text);//在接收文本框中显示            
 
-            Console.WriteLine(msgContent);
         }
 
-
-        
 
         public static void OpenTheDoor()
         {

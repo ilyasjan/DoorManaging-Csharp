@@ -47,6 +47,7 @@ namespace DoorManaging.Forms
         private void 开ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             HardDeviceManaging.OpenTheDoor();
+            timer1.Enabled = true;
         }
 
         private void 关ToolStripMenuItem_Click(object sender, EventArgs e)
@@ -82,19 +83,27 @@ namespace DoorManaging.Forms
                 Entities.Students stu = DBO.getStudentKH(ucard);
                 String dt = DateTime.Now.ToString();
                 String evnt = "禁止进门.";
-                if (stu.ENABLE)
+                if (stu!=null)
                 {
-                    HardDeviceManaging.OpenTheDoor();
-                    timer1.Enabled = true;
-                    evnt = "允许进门.";
+                    if (stu.ENABLE)
+                    {
+                        HardDeviceManaging.OpenTheDoor();
+                        timer1.Enabled = true;
+                        evnt = "允许进门.";
+                    }
+
+                    lbl_card.Text = stu.CARD;
+                    lbl_class.Text = stu.CLASS;
+                    lbl_dtime.Text = dt;
+                    lbl_name.Text = stu.NAME;
+                    lbl_ordre.Text = evnt;
+                    lbl_sno.Text = stu.SNO;
+                    DBO.Record(stu, dt, evnt);
                 }
-                lbl_card.Text = stu.CARD;
-                lbl_class.Text = stu.CLASS;
-                lbl_dtime.Text = dt;
-                lbl_name.Text = stu.NAME;
-                lbl_ordre.Text = evnt;
-                lbl_sno.Text = stu.SNO;
-                DBO.Record(stu, dt, evnt);
+                else
+                {
+                    MessageBox.Show("未注册!", "警告", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
             catch (Exception e)
             {
