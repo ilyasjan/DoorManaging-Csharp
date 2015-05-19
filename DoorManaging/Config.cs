@@ -36,7 +36,7 @@ namespace DoorManaging
                     String V = KV.Split('=')[1].Trim();
                     KeyValue.Add(K, V);
                 }
-                catch (Exception e)
+                catch (Exception)
                 {
                    // throw e;
                 }

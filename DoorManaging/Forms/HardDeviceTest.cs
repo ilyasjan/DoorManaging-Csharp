@@ -29,7 +29,7 @@ namespace DoorManaging.Forms
         {
             try
             {
-                HardDeviceManaging.Open();
+                HardDeviceManaging.OpenTheDoor();
             }
             catch (Exception e1) {
                 ShowErrorMessage(e1.Message);
@@ -41,7 +41,7 @@ namespace DoorManaging.Forms
 
             try
             {
-                HardDeviceManaging.Lock();
+                HardDeviceManaging.LockTheDoor();
             }
             catch (Exception e1)
             {

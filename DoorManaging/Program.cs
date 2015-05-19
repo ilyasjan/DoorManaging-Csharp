@@ -14,7 +14,14 @@ namespace DoorManaging
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+            Application.ThreadExit += new EventHandler(Application_ThreadExit);
+            HardDeviceManaging.Initial();
             Application.Run(new Forms.MainWithGrid());
+        }
+
+        static void Application_ThreadExit(object sender, EventArgs e)
+        {
+            HardDeviceManaging.PortClose();
         }
     }
 }

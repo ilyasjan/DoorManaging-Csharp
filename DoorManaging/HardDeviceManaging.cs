@@ -6,16 +6,15 @@ namespace DoorManaging
 {
     public class HardDeviceManaging
     {
-        private SerialPort sPorts;
+        private static SerialPort sPorts;
+        private static bool isInit = false;
         /// <summary>
         /// 数据接收接口
         /// </summary>
-        public IHardRecived rec { get; set; }
-        private string msgContent = "";
-        /// <summary>
-        /// 使用前必须实现IHardRecived,并付给hm.rec属性
-        /// </summary>
-        public HardDeviceManaging()
+        public static IHardRecived rec { get; set; }
+        private static string msgContent = "";
+
+        private static void Init()
         {
             Config conf = new Config("port.conf");
             sPorts = new SerialPort(conf.getValue("portname"));
@@ -31,17 +30,30 @@ namespace DoorManaging
             sPorts.StopBits = StopBits.One;
             sPorts.WriteBufferSize = 2048;
             sPorts.DataReceived += new SerialDataReceivedEventHandler(sPorts_DataReceived);
+            sPorts.Open();
         }
 
 
-        public String byteToString(byte[] bs)
+        /// <summary>
+        /// 使用前必须实现IHardRecived,并付给hm.rec属性
+        /// </summary>
+        public static void Initial()
+        {
+            if (sPorts == null)
+            {
+                Init();
+            }
+        }
+
+
+        public static String byteToString(byte[] bs)
         {
             char[] buff = new char[1];
             sPorts.Read(buff, 0, 1);
             return buff[0].ToString();
 
         }
-        public string GetDatafromSerial(byte[] sr)
+        public static string GetDatafromSerial(byte[] sr)
         {
             string kID = "";
             if (sr != null)
@@ -60,42 +72,12 @@ namespace DoorManaging
 
 
 
-        public static void Open()
-        {
-            try
-            {
-                HardDeviceManaging hm = new HardDeviceManaging();
-                hm.Start();
-                hm.OpenTheDoor();
-                hm.End();
-            }
-            catch (Exception e)
-            {
-                throw e;
-            }
-        }
-        public static void Lock()
-        {
-            try
-            {
-                HardDeviceManaging hm = new HardDeviceManaging();
-                hm.Start();
-                hm.LockTheDoor();
-                hm.End();
-            }
-            catch (Exception e)
-            {
-                throw e;
-            }
-        }
+       
 
-        private int counter = 0;
-        void sPorts_DataReceived(object sender, SerialDataReceivedEventArgs e)
+        private static int counter = 0;
+        static void sPorts_DataReceived(object sender, SerialDataReceivedEventArgs e)
         {
             byte[] buff = new byte[1];
-            //byte firstByte = Convert.ToByte(sPorts.ReadByte());
-            //int bytesRead = sPorts.BytesToRead;
-            //String buff = String.Format("First One :{0}\t Size:{1}", firstByte.ToString(), bytesRead);
             sPorts.Read(buff, 0, 1);
             msgContent += Convert.ToString(buff[0], 16);
             counter++;
@@ -110,20 +92,9 @@ namespace DoorManaging
         }
 
 
-        public void Start()
-        {
-            try
-            {
-                sPorts.Open();
-            }
+        
 
-            catch (Exception e)
-            {
-                throw e;
-            }
-        }
-
-        public void OpenTheDoor()
+        public static void OpenTheDoor()
         {
             try
             {
@@ -137,7 +108,7 @@ namespace DoorManaging
             }
         }
 
-        public void LockTheDoor()
+        public static void LockTheDoor()
         {
             try
             {
@@ -150,22 +121,11 @@ namespace DoorManaging
             }
         }
 
-        public void End()
+
+        public static void PortClose()
         {
-            try
-            {
+            if (sPorts != null)
                 sPorts.Close();
-            }
-
-            catch (Exception e)
-            {
-                throw e;
-            }
-        }
-
-        ~HardDeviceManaging()
-        {
-            End();
         }
     }
 }

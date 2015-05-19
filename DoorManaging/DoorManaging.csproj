@@ -58,7 +58,6 @@
     </Compile>
     <Compile Include="ConnectException.cs" />
     <Compile Include="Database.cs" />
-    <Compile Include="Forms\HandleInterfaceUpdateDelegate.cs" />
     <Compile Include="Forms\UserInfos.cs">
       <SubType>Form</SubType>
     </Compile>

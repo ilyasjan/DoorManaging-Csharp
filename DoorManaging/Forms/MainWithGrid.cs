@@ -11,7 +11,6 @@ namespace DoorManaging.Forms
     public partial class MainWithGrid : Form, IHardRecived
     {
 
-        private HardDeviceManaging hm;
         delegate void HandleInterfaceUpdateDelegate(string text);
 
         public MainWithGrid()
@@ -47,12 +46,12 @@ namespace DoorManaging.Forms
 
         private void 开ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            HardDeviceManaging.Open();
+            HardDeviceManaging.OpenTheDoor();
         }
 
         private void 关ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            HardDeviceManaging.Lock();
+            HardDeviceManaging.LockTheDoor();
         }
 
         public void RecievedData(string content)
@@ -62,15 +61,16 @@ namespace DoorManaging.Forms
         private void UpdateReceiveTextBox(string text)
         {
             //不在同一线程
-            if (dataGridView1.InvokeRequired)
+            if (lbl_sno.InvokeRequired)
             {
                 HandleInterfaceUpdateDelegate InterfaceUpdate = new HandleInterfaceUpdateDelegate(UpdateReceiveTextBox);
-                Invoke(InterfaceUpdate, new object[] { text });
+                Invoke(InterfaceUpdate, text);
             }
             //在同一线程
             else
             {
                 AddToLog(text);
+                //lbl_sno.Invoke(AddToLog, new object[] { text });
             }
         }
 
@@ -80,32 +80,45 @@ namespace DoorManaging.Forms
             try
             {
                 Entities.Students stu = DBO.getStudentKH(ucard);
-                String dt = DateTime.Today.ToOADate().ToString();
+                String dt = DateTime.Now.ToString();
                 String evnt = "禁止进门.";
                 if (stu.ENABLE)
                 {
-                    HardDeviceManaging.Open();
+                    HardDeviceManaging.OpenTheDoor();
+                    timer1.Enabled = true;
                     evnt = "允许进门.";
                 }
+                lbl_card.Text = stu.CARD;
+                lbl_class.Text = stu.CLASS;
+                lbl_dtime.Text = dt;
+                lbl_name.Text = stu.NAME;
+                lbl_ordre.Text = evnt;
+                lbl_sno.Text = stu.SNO;
                 DBO.Record(stu, dt, evnt);
             }
             catch (Exception e)
-            { 
-                
+            {
+                DBO.Err(e);
+                MessageBox.Show(e.Message);
             }
         }
         private void MainWithGrid_Load(object sender, EventArgs e)
         {
             try
             {
-                hm = new HardDeviceManaging();
-                hm.rec = this;
-                hm.Start();
+                HardDeviceManaging.rec = this;
             }
             catch (Exception ex)
             {
+                DBO.Err(ex);
                 MessageBox.Show(ex.Message, "警告!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            HardDeviceManaging.LockTheDoor();
+            timer1.Enabled = false;
         }
     }
 }

@@ -56,7 +56,7 @@ namespace DoorManaging
         {
             Database db = new Database();
             db.init();
-            string sql = String.Format("select * from Users where `ucard` = {0}", kh);
+            string sql = String.Format("select * from Users where `ucard` = '{0}'", kh);
             System.Data.DataTable dt = db.getTable(sql);
             Students st = new Students(dt);
             return st;
@@ -74,7 +74,7 @@ namespace DoorManaging
         {
             Database db = new Database();
             db.init();
-            string sql = String.Format("insert into `ErrLog` (errmsg,dtime) values('{0}')", st.ID, date, evnt);
+            string sql = String.Format("insert into `ErrLog` (errmsg,dtime) values('{0}','{1}')", msg.Message.Replace('\'','\"'),DateTime.Now.ToString());
             db.Insert(sql);
         }
     }

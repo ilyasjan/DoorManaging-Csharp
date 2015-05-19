@@ -11,7 +11,6 @@ namespace DoorManaging
     public partial class Managing : Form, IHardRecived
     {
         private Entities.Students oldST, newST;
-        private HardDeviceManaging hm;
         delegate void HandleInterfaceUpdateDelegate(string text);
         public Managing()
         {
@@ -69,6 +68,7 @@ namespace DoorManaging
             }
             catch (Exception e1)
             {
+                DBO.Err(e1);
                 MessageBox.Show(e1.Message, "警告!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             //MessageBox.Show(oldST.ID.ToString());
@@ -87,12 +87,12 @@ namespace DoorManaging
             newST = new Entities.Students();
             try
             {
-                hm = new HardDeviceManaging();
-                hm.rec = this;
-                hm.Start();
+                
+                HardDeviceManaging.rec = this;
             }
             catch (Exception ex)
             {
+                DBO.Err(ex);
                 MessageBox.Show(ex.Message, "警告!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
