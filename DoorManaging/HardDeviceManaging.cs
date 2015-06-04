@@ -14,21 +14,28 @@ namespace DoorManaging
 
         private static void Init()
         {
-            Config conf = new Config("port.conf");
-            sPorts = new SerialPort(conf.getValue("portname"));
-            sPorts.WriteTimeout = 2000;
-            sPorts.BaudRate = 4800;
-            sPorts.DiscardNull = false;
-            sPorts.DtrEnable = false;
-            sPorts.ParityReplace = 63;
-            sPorts.ReadBufferSize = 4096;
-            sPorts.ReadTimeout = 2000;
-            sPorts.ReceivedBytesThreshold = 1;
-            sPorts.RtsEnable = false;
-            sPorts.StopBits = StopBits.One;
-            sPorts.WriteBufferSize = 2048;
-            sPorts.DataReceived += new SerialDataReceivedEventHandler(sPorts_DataReceived);
-            sPorts.Open();
+            try
+            {
+                Config conf = new Config("port.conf");
+                sPorts = new SerialPort(conf.getValue("portname"));
+                sPorts.WriteTimeout = 2000;
+                sPorts.BaudRate = 4800;
+                sPorts.DiscardNull = false;
+                sPorts.DtrEnable = false;
+                sPorts.ParityReplace = 63;
+                sPorts.ReadBufferSize = 4096;
+                sPorts.ReadTimeout = 2000;
+                sPorts.ReceivedBytesThreshold = 1;
+                sPorts.RtsEnable = false;
+                sPorts.StopBits = StopBits.One;
+                sPorts.WriteBufferSize = 2048;
+                sPorts.DataReceived += new SerialDataReceivedEventHandler(sPorts_DataReceived);
+                sPorts.Open();
+            }
+            catch (Exception e)
+            { 
+            
+            }
         }
 
 
@@ -77,7 +84,7 @@ namespace DoorManaging
         public static void LockTheDoor()
         {
             try
-            {
+            { 
                 sPorts.Write(new byte[] { 0xff }, 0, 1);
             }
 

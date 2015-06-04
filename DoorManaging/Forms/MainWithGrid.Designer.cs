@@ -42,18 +42,19 @@
             this.关于ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.lbl_sno = new System.Windows.Forms.Label();
-            this.lbl_name = new System.Windows.Forms.Label();
-            this.lbl_card = new System.Windows.Forms.Label();
             this.lbl_dtime = new System.Windows.Forms.Label();
             this.lbl_ordre = new System.Windows.Forms.Label();
             this.lbl_class = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
+            this.lbl_sno = new System.Windows.Forms.Label();
+            this.lbl_name = new System.Windows.Forms.Label();
+            this.lbl_card = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.错误信息记录ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -97,7 +98,8 @@
             // 记录信息ToolStripMenuItem
             // 
             this.记录信息ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.查询所有的记录ToolStripMenuItem});
+            this.查询所有的记录ToolStripMenuItem,
+            this.错误信息记录ToolStripMenuItem});
             this.记录信息ToolStripMenuItem.Name = "记录信息ToolStripMenuItem";
             this.记录信息ToolStripMenuItem.Size = new System.Drawing.Size(71, 20);
             this.记录信息ToolStripMenuItem.Text = "记录信息";
@@ -173,66 +175,6 @@
             this.panel1.Size = new System.Drawing.Size(719, 452);
             this.panel1.TabIndex = 1;
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(239, 57);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(61, 29);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "卡号";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(239, 118);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(61, 29);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "名称";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(239, 179);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(61, 29);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "学号";
-            // 
-            // lbl_sno
-            // 
-            this.lbl_sno.AutoSize = true;
-            this.lbl_sno.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_sno.Location = new System.Drawing.Point(397, 179);
-            this.lbl_sno.Name = "lbl_sno";
-            this.lbl_sno.Size = new System.Drawing.Size(79, 29);
-            this.lbl_sno.TabIndex = 5;
-            this.lbl_sno.Text = "label4";
-            // 
-            // lbl_name
-            // 
-            this.lbl_name.AutoSize = true;
-            this.lbl_name.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_name.Location = new System.Drawing.Point(397, 118);
-            this.lbl_name.Name = "lbl_name";
-            this.lbl_name.Size = new System.Drawing.Size(79, 29);
-            this.lbl_name.TabIndex = 4;
-            this.lbl_name.Text = "label5";
-            // 
-            // lbl_card
-            // 
-            this.lbl_card.AutoSize = true;
-            this.lbl_card.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_card.Location = new System.Drawing.Point(397, 57);
-            this.lbl_card.Name = "lbl_card";
-            this.lbl_card.Size = new System.Drawing.Size(79, 29);
-            this.lbl_card.TabIndex = 3;
-            this.lbl_card.Text = "label6";
-            // 
             // lbl_dtime
             // 
             this.lbl_dtime.AutoSize = true;
@@ -247,6 +189,7 @@
             // 
             this.lbl_ordre.AutoSize = true;
             this.lbl_ordre.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_ordre.ForeColor = System.Drawing.Color.White;
             this.lbl_ordre.Location = new System.Drawing.Point(397, 301);
             this.lbl_ordre.Name = "lbl_ordre";
             this.lbl_ordre.Size = new System.Drawing.Size(79, 29);
@@ -292,6 +235,73 @@
             this.label12.Size = new System.Drawing.Size(61, 29);
             this.label12.TabIndex = 6;
             this.label12.Text = "班级";
+            // 
+            // lbl_sno
+            // 
+            this.lbl_sno.AutoSize = true;
+            this.lbl_sno.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_sno.Location = new System.Drawing.Point(397, 179);
+            this.lbl_sno.Name = "lbl_sno";
+            this.lbl_sno.Size = new System.Drawing.Size(79, 29);
+            this.lbl_sno.TabIndex = 5;
+            this.lbl_sno.Text = "label4";
+            // 
+            // lbl_name
+            // 
+            this.lbl_name.AutoSize = true;
+            this.lbl_name.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_name.Location = new System.Drawing.Point(397, 118);
+            this.lbl_name.Name = "lbl_name";
+            this.lbl_name.Size = new System.Drawing.Size(79, 29);
+            this.lbl_name.TabIndex = 4;
+            this.lbl_name.Text = "label5";
+            // 
+            // lbl_card
+            // 
+            this.lbl_card.AutoSize = true;
+            this.lbl_card.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_card.Location = new System.Drawing.Point(397, 57);
+            this.lbl_card.Name = "lbl_card";
+            this.lbl_card.Size = new System.Drawing.Size(79, 29);
+            this.lbl_card.TabIndex = 3;
+            this.lbl_card.Text = "label6";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(239, 179);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(61, 29);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "学号";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(239, 118);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(61, 29);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "名称";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(239, 57);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(61, 29);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "卡号";
+            // 
+            // 错误信息记录ToolStripMenuItem
+            // 
+            this.错误信息记录ToolStripMenuItem.Name = "错误信息记录ToolStripMenuItem";
+            this.错误信息记录ToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
+            this.错误信息记录ToolStripMenuItem.Text = "错误信息记录";
+            this.错误信息记录ToolStripMenuItem.Click += new System.EventHandler(this.错误信息记录ToolStripMenuItem_Click);
             // 
             // MainWithGrid
             // 
@@ -342,5 +352,6 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.ToolStripMenuItem 错误信息记录ToolStripMenuItem;
     }
 }

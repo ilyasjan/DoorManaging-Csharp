@@ -153,7 +153,7 @@
             this.MaximizeBox = false;
             this.Name = "UserInfos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "查询信息";
+            this.Text = "用户信息维护";
             this.Load += new System.EventHandler(this.ViewInformation_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);

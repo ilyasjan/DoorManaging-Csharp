@@ -29,12 +29,27 @@ namespace DoorManaging.Forms
         private void 添加新用户ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var form = new AddNew();
+            form.FormClosed += new FormClosedEventHandler(form_FormClosed);
             form.ShowDialog();
+        }
+
+        void form_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            try
+            {
+                HardDeviceManaging.rec = this;
+            }
+            catch (Exception ex)
+            {
+                DBO.Err(ex);
+                MessageBox.Show(ex.Message, "警告!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void 维护用户信息ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var form = new UserInfos();
+            form.FormClosed += new FormClosedEventHandler(form_FormClosed);
             form.ShowDialog();
         }
 
@@ -70,6 +85,7 @@ namespace DoorManaging.Forms
             //在同一线程
             else
             {
+
                 AddToLog(text);
                 //lbl_sno.Invoke(AddToLog, new object[] { text });
             }
@@ -78,20 +94,26 @@ namespace DoorManaging.Forms
 
         private void AddToLog(String ucard)
         {
+            if (timer1.Enabled)
+                return;
             try
             {
                 Entities.Students stu = DBO.getStudentKH(ucard);
                 String dt = DateTime.Now.ToString();
                 String evnt = "禁止进门.";
-                if (stu!=null)
+                if (stu != null)
                 {
                     if (stu.ENABLE)
                     {
                         HardDeviceManaging.OpenTheDoor();
                         timer1.Enabled = true;
                         evnt = "允许进门.";
+                        lbl_ordre.BackColor = Color.Blue;
                     }
-
+                    else
+                    {
+                        lbl_ordre.BackColor = Color.Red;
+                    }
                     lbl_card.Text = stu.CARD;
                     lbl_class.Text = stu.CLASS;
                     lbl_dtime.Text = dt;
@@ -102,7 +124,15 @@ namespace DoorManaging.Forms
                 }
                 else
                 {
-                    MessageBox.Show("未注册!", "警告", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    lbl_card.Text = "N/A";
+                    lbl_class.Text = "N/A";
+                    lbl_dtime.Text = dt;
+                    lbl_name.Text = "N/A";
+                    lbl_ordre.Text = evnt;
+                    lbl_ordre.BackColor = Color.Red;
+                    lbl_sno.Text = "N/A";
+
+                    //MessageBox.Show("未注册!", "警告", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             catch (Exception e)
@@ -129,5 +159,12 @@ namespace DoorManaging.Forms
             HardDeviceManaging.LockTheDoor();
             timer1.Enabled = false;
         }
+
+        private void 错误信息记录ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+
     }
 }
