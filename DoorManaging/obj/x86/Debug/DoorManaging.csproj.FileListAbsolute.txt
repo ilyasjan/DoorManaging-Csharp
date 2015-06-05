@@ -26,3 +26,4 @@ Z:\BYSJ\DoorManaging\DoorManaging\obj\x86\Debug\DoorManaging.Properties.Resource
 Z:\BYSJ\DoorManaging\DoorManaging\obj\x86\Debug\DoorManaging.ViewInformation.resources
 Z:\BYSJ\DoorManaging\DoorManaging\obj\x86\Debug\DoorManaging.csproj.GenerateResource.Cache
 Z:\BYSJ\DoorManaging\DoorManaging\obj\x86\Debug\DoorManaging.UserInfos.resources
+Z:\BYSJ\DoorManaging\DoorManaging\obj\x86\Debug\DoorManaging.Forms.ErrInfos.resources

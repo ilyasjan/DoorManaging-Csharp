@@ -105,6 +105,9 @@
     <EmbeddedResource Include="Forms\AddNew.resx">
       <DependentUpon>AddNew.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ErrInfos.resx">
+      <DependentUpon>ErrInfos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\MainWithGrid.resx">
       <DependentUpon>MainWithGrid.cs</DependentUpon>
     </EmbeddedResource>

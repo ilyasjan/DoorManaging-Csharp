@@ -22,6 +22,14 @@ namespace DoorManaging
             return db.Update(sql);
         }
 
+        public static System.Data.DataTable getErrLog()
+        {
+            Database db = new Database();
+            db.init();
+            String sql = "";
+            return db.getTable(sql);
+        }
+
         public static System.Data.DataTable getEventLogs(string kh, string mc, string xh, string bj)
         {
             Database db = new Database();

@@ -14,5 +14,10 @@ namespace DoorManaging.Forms
         {
             InitializeComponent();
         }
+
+        private void ErrInfos_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
