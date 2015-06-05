@@ -26,7 +26,7 @@ namespace DoorManaging
         {
             Database db = new Database();
             db.init();
-            String sql = "";
+            String sql = "select * from ErrorLogs";
             return db.getTable(sql);
         }
 

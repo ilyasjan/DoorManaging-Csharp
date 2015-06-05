@@ -135,7 +135,7 @@
             this.chkEnable.Name = "chkEnable";
             this.chkEnable.Size = new System.Drawing.Size(74, 17);
             this.chkEnable.TabIndex = 21;
-            this.chkEnable.Text = "是否有效";
+            this.chkEnable.Text = "是否合法";
             this.chkEnable.UseVisualStyleBackColor = true;
             // 
             // label5
@@ -145,7 +145,7 @@
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(43, 13);
             this.label5.TabIndex = 20;
-            this.label5.Text = "有效性";
+            this.label5.Text = "合法性";
             // 
             // AddNew
             // 

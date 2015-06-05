@@ -17,7 +17,7 @@ namespace DoorManaging.Forms
 
         private void ErrInfos_Load(object sender, EventArgs e)
         {
-
+            dataGridView1.DataSource = DBO.getErrLog();
         }
     }
 }

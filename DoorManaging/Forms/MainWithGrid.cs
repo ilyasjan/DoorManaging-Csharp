@@ -162,7 +162,8 @@ namespace DoorManaging.Forms
 
         private void 错误信息记录ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            var form = new ErrInfos();
+            form.ShowDialog();
         }
 
 
